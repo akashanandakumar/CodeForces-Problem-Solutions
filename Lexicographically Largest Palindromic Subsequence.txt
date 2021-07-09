@@ -1,0 +1,45 @@
+Problem Link : https://codeforces.com/contest/202/problem/A
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+string largestPalinSub(string s)
+{
+  string res;
+
+  char mx = s[0];
+
+  
+  for (int i = 1; i < s.length(); i++)
+    mx = max(mx, s[i]);
+
+  
+  for (int i = 0; i < s.length(); i++)
+    if (s[i] == mx)
+      res += s[i];
+
+  return res;
+}
+
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+
+#ifndef ONLINE_JUDGE
+  freopen("input.txt", "r", stdin);
+  freopen("error.txt", "w", stderr);
+  freopen("output.txt", "w", stdout);
+#endif
+
+
+  string s;
+  cin >> s;
+
+  cout << largestPalinSub(s);
+  cout << endl;
+
+
+  return 0;
+}
